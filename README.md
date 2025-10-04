@@ -10,12 +10,16 @@
 * 如果sing-box报配置错误,卸载插件,然后删除`/etc/homeproxy`和`/run/homeproyx/`目录,删除`/etc/config/homeproxy`文件，再安装`homeproxy`，再替换`/etc/config/homeproxy`文件
 * 如果在意DNS泄漏，按如下方法修改
 - 客户端设置
-  - DNS设置　　//`默认DNS服务器`修改为`DNS_Server_MainlyExport`
   - DNS规则　　//`DNS_Rule_China`选择`DNS_Server_MainlyExport`，`DNS_Server_Apple`规则选择`DNS_Server_Apple`
 # HomeProxy 自定义规则文件添加说明
 - 客户端设置
-  - 规则集　　//添加一个直连规则集,类型：远程，格式：源文件，规则集URL:```https://www.ghproxy.cn/```后面跟github地址，出站：直连；不要使用本仓库下的direct.json，里面域名地址是我随便写的，先fork到自己仓库，然后修改为自己想要的域名；添加代理规则和直连规则的方式一样。
-* 只添加需要的规则，为空的规则要删除，不然HomeProxy会报错，```domain,domain_suffix,domain_keyword,ip_cidr```这四项，哪项有数据就保留哪一项，不要留空。
+  - 规则集　　//添加一个直连规则集,类型：远程，格式：源文件，规则集URL:`https://ghfast.top/`后面跟github地址，出站：直连；不要使用本仓库下的direct.json，里面域名地址是我随便写的，先fork到自己仓库，然后修改为自己想要的域名；添加代理规则和直连规则的方式一样,如果代理规则地址又
+  
+  
+  
+  
+  。
+* 只添加需要的规则，为空的规则要删除，不然HomeProxy会报错，`domain,domain_suffix,domain_keyword,ip_cidr`这四项，哪项有数据就保留哪一项，不要留空。
 ``` bash
 {
   "version": 1,
@@ -40,6 +44,6 @@
 }
 ```
 - 客户端设置
-  - 路由规则　　//修改```NoChina```，规则集中添加刚添加的proxy规则集，修改```China```，规则集中添加刚添加的direct规则集
-  - DNS规则　　//修改```DNS_Rule_China```，规则集中添加刚添加的direct规则集，修改```DNS_Rule_NoChina```，规则集中添加刚添加的proxy规则集
+  - 路由规则　　//添加要代理的规则，规则集中添加刚添加的proxy规则集，修改`China`，规则集中添加刚添加的direct规则集
+  - DNS规则　　//修改`DNS_Rule_China`，规则集中添加刚添加的direct规则集，添加DNS规则，规则集中添加刚添加的proxy规则集
 * 保存并应用
