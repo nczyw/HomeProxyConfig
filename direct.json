@@ -3,10 +3,12 @@
   "rules": [
     {
       "domain_suffix": [
+        "huorong.cn",
         "test-ipv6.com",
         "sublimewj.top"
       ]
     }
   ]
 }
+
 
