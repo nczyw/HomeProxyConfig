@@ -3,7 +3,8 @@
   "rules": [
     {
       "domain_suffix": [
-        "sublimewj.top"
+        "sublimewj.top",
+        "test-ipv6.com"
       ]
     }
   ]
